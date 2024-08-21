@@ -1,0 +1,19 @@
+{
+  "name": "Cody",
+  "description": "Assistant for quickly passing existing code context to LLMs",
+  "version": "1.0.0",
+  "main": "main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-packager . --icon=fox.icns --out=build --overwrite"
+  },
+  "dependencies": {
+    "chalk": "^5.0.0",
+    "clipboardy": "^3.0.0",
+    "electron-notification-state": "^1.0.4"
+  },
+  "devDependencies": {
+    "electron": "^32.0.1",
+    "electron-packager": "^17.1.2"
+  }
+}
