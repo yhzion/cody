@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';"
+    />
+    <title>Cody</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <div class="header-container">
+          <div class="header-left">
+            <img src="../assets/fox.png" alt="Cody" />
+            <div>
+              <span class="title">Cody</span>
+              <span class="subtitle"
+                >Assistant for quickly passing existing code context to
+                LLMs</span
+              >
+            </div>
+          </div>
+          <div class="header-right">v1.0.0</div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div id="form-container">
+        <!-- 베이스 디렉토리 선택 및 경로 추가 영역 -->
+        <div class="form-group">
+          <label for="base-directory">베이스 디렉토리</label>
+          <input type="text" id="base-directory" readonly />
+          <button id="select-base-dir">탐색</button>
+        </div>
+
+        <div class="form-group path-header">
+          <label for="path-list">파일/디렉토리</label>
+          <button id="add-path">+ 추가</button>
+        </div>
+
+        <div id="path-list">
+          <!-- 경로 항목들이 여기 추가될 것임 -->
+        </div>
+
+        <!-- 정규식 필터 입력 및 재설정 버튼 -->
+        <div class="form-group">
+          <label for="include-regex">포함할 경로 정규식 필터</label>
+          <textarea
+            id="include-regex"
+            rows="5"
+            placeholder="Include pattern"
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="exclude-regex"
+            >제외할 경로 정규식<button id="reset-exclude-regex">
+              기본설정사용
+            </button>
+          </label>
+
+          <textarea
+            rows="5"
+            id="exclude-regex"
+            placeholder="Exclude pattern"
+          ></textarea>
+        </div>
+
+        <!-- 파일 내용 및 텍스트 파일 추출 옵션 -->
+        <div class="form-group">
+          <label for="show-content">파일 내용 포함</label>
+          <input type="checkbox" id="show-content" checked />
+        </div>
+
+        <div class="form-group">
+          <label for="output-file">텍스트 파일로 추출</label>
+          <input type="checkbox" id="output-file" />
+          <input
+            type="text"
+            id="output-file-path"
+            class="path-input"
+            readonly
+          />
+          <button id="select-output-dir" disabled>탐색</button>
+        </div>
+
+        <!-- 윈도우 최상단 유지 옵션 -->
+        <div class="form-group">
+          <label for="always-on-top">윈도우 최상단 유지</label>
+          <input type="checkbox" id="always-on-top" />
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="button-group">
+        <button id="copy-btn">복사</button>
+        <button id="copy-chatgpt-btn">복사 후 ChatGPT 열기</button>
+        <button id="minimize-btn">최소화</button>
+        <button id="exit-btn">종료</button>
+      </div>
+    </footer>
+    <script src="../src/renderer.js"></script>
+  </body>
+</html>

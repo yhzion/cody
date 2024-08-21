@@ -2,10 +2,10 @@
   "name": "Cody",
   "description": "Assistant for quickly passing existing code context to LLMs",
   "version": "1.0.0",
-  "main": "main.cjs",
+  "main": "src/main.cjs",
   "scripts": {
     "start": "electron .",
-    "build": "electron-packager . --icon=fox.icns --out=build --overwrite"
+    "build": "electron-builder"
   },
   "dependencies": {
     "chalk": "^5.0.0",
@@ -14,6 +14,47 @@
   },
   "devDependencies": {
     "electron": "^32.0.1",
+    "electron-builder": "^24.13.3",
     "electron-packager": "^17.1.2"
-  }
+  },
+  "author": "Youngho.jeon",
+  "build": {
+    "appId": "com.github.yhzion.cody",
+    "dmg": {
+      "volumeName": "Cody"
+    },
+    "mac": {
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "x64",
+            "arm64",
+            "universal"
+          ]
+        }
+      ],
+      "icon": "assets/fox.icns"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ],
+      "icon": "assets/fox.ico"
+    }
+  },
+  "license": "MIT"
 }
