@@ -1,6 +1,5 @@
 ### README.md
 
-````markdown
 # Cody
 
 **Cody**는 기존 코드 컨텍스트를 빠르게 LLM(Large Language Model)에 전달할 수 있도록 도와주는 어시스턴트 애플리케이션입니다. 이 애플리케이션은 Electron을 기반으로 하여, 프로젝트의 디렉토리 구조를 트리 형태로 시각화하고, 필요한 코드 내용을 빠르게 추출해 클립보드에 복사하거나 파일로 저장할 수 있도록 지원합니다.
@@ -29,6 +28,7 @@ git clone https://github.com/yourusername/cody.git
 cd cody
 npm install
 ```
+
 ````
 
 ### 실행
@@ -90,3 +90,4 @@ npm run build
 
 이 README.md는 프로젝트의 기능과 사용 방법을 간단하게 설명하고 있으며, 코드베이스 구조도 포함하고 있어 사용자가 쉽게 이해할 수 있도록 구성되어 있습니다. 필요에 따라 프로젝트에 맞게 추가 설명을 포함하거나 수정할 수 있습니다.
 ```
+````
