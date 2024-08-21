@@ -21,7 +21,7 @@
   "build": {
     "appId": "com.github.yhzion.cody",
     "dmg": {
-      "volumeName": "Cody"
+      "title": "Cody"
     },
     "mac": {
       "target": [
