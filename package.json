@@ -10,12 +10,12 @@
   "dependencies": {
     "chalk": "^5.0.0",
     "clipboardy": "^3.0.0",
-    "electron-notification-state": "^1.0.4"
+    "electron-notifications": "^1.0.0"
   },
   "devDependencies": {
+    "@electron/packager": "^18.3.4",
     "electron": "^32.0.1",
-    "electron-builder": "^24.13.3",
-    "electron-packager": "^17.1.2"
+    "electron-builder": "^24.3.3"
   },
   "author": "Youngho.jeon",
   "buildConfig": "electron-builder.yml",
