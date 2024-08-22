@@ -1,5 +1,5 @@
 {
-  "name": "Cody",
+  "name": "cody",
   "description": "Assistant for quickly passing existing code context to LLMs",
   "version": "1.0.0",
   "main": "src/main.cjs",
@@ -28,32 +28,11 @@
         {
           "target": "dmg",
           "arch": [
-            "x64",
-            "arm64",
             "universal"
           ]
         }
       ],
       "icon": "assets/fox.icns"
-    },
-    "win": {
-      "target": [
-        {
-          "target": "nsis",
-          "arch": [
-            "x64",
-            "ia32"
-          ]
-        },
-        {
-          "target": "portable",
-          "arch": [
-            "x64",
-            "ia32"
-          ]
-        }
-      ],
-      "icon": "assets/fox.ico"
     }
   },
   "license": "MIT"
