@@ -26,9 +26,7 @@
 sudo chown -R 501:20 ~/.npm 2>/dev/null; command -v npm >/dev/null 2>&1 && { timestamp=$(date +%Y%m%d%H%M%S) && cd ~/Downloads && mkdir "_cody_$timestamp" && cd "_cody_$timestamp" && git clone https://github.com/yhzion/cody && cd cody && npm i && npm run build && open dist/cody-*.dmg; } || { echo "npm is not installed. Please download and install it from https://nodejs.org."; }
 ```
 
-
 ## 직접 빌드
-
 ```bash
 git clone https://github.com/yhzion/cody.git
 cd cody
@@ -36,13 +34,11 @@ npm install
 ```
 
 ### 실행
-
 ```bash
 npm start
 ```
 
 ### 빌드
-
 애플리케이션을 빌드하여 실행 파일을 생성할 수 있습니다:
 
 ```bash
@@ -50,7 +46,6 @@ npm run build
 ```
 
 ## 사용 방법
-
 1. **베이스 디렉토리 선택**: 베이스 디렉토리 선택 버튼을 클릭하여 분석할 디렉토리를 선택합니다.
 2. **경로 추가**: 필요한 경우 추가적으로 분석할 파일이나 디렉토리를 선택하여 목록에 추가합니다.
 3. **정규식 필터**: 포함하거나 제외할 경로를 정규식으로 설정합니다.
@@ -59,35 +54,7 @@ npm run build
 6. **클립보드 복사**: 생성된 트리 구조를 클립보드에 복사합니다.
 7. **ChatGPT 열기**: 트리 구조를 복사한 후, 바로 ChatGPT를 열어 붙여넣기 및 사용이 가능합니다.
 
-## 파일 구조
-
-```plaintext
-├── 📁 utils
-│   ├── 📄 colors.cjs
-│   └── 📄 fileSystem.cjs
-├── 📄 .gitignore
-├── 📄 LICENSE
-├── 📄 README.md
-├── 📄 fox.icns
-├── 📄 icon_128x128.png
-├── 📄 index.html
-├── 📄 main.cjs
-├── 📄 package.json
-├── 📄 preload.js
-├── 📄 renderer.js
-└── 📄 styles.css
-```
-
-- **utils/colors.cjs**: 콘솔 출력에 사용할 색상 스타일을 정의합니다.
-- **utils/fileSystem.cjs**: 디렉토리 트리를 생성하고, 파일 내용을 처리하는 로직이 포함되어 있습니다.
-- **main.cjs**: Electron 메인 프로세스를 설정하고, 애플리케이션 창을 생성합니다.
-- **preload.js**: Renderer 프로세스와 Main 프로세스 간의 안전한 통신을 위한 브리지 스크립트입니다.
-- **renderer.js**: UI에서 발생하는 이벤트를 처리하고, 사용자 인터페이스를 업데이트합니다.
-- **index.html**: 애플리케이션의 메인 HTML 구조입니다.
-- **styles.css**: 애플리케이션의 스타일을 정의하는 CSS 파일입니다.
-
 ## Q&A
-
 ### Q1: 전체 코드를 입력했더니 응답을 받지 못했습니다. 어떻게 해야 하나요?
 **A1:** ChatGPT의 토큰 수 제한을 극복하기 위해 핵심 코드만 제공하거나, 코드 분할 입력, 맥락 설명 추가, 코드 공유 링크 활용 등의 방법을 사용하세요.
 

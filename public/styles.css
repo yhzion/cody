@@ -1,200 +1,200 @@
 /* 기본 스타일 (라이트 모드) */
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  background-color: #f0f0f0;
-  color: #000;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f0f0f0;
+    color: #000;
 }
 
 header {
-  background-color: #f0f0f0;
-  padding: 10px 10px 0 10px;
-  font-size: 0.75em;
-  width: 100%;
-  box-sizing: border-box;
+    background-color: #f0f0f0;
+    padding: 10px 10px 0 10px;
+    font-size: 0.75em;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
 .header-left,
 .header-right {
-  flex: 0 0 auto;
+    flex: 0 0 auto;
 }
 
 .header-left {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .header-left img {
-  margin-right: 10px;
+    margin-right: 10px;
 }
 
 .header-left div {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .header-left .title {
-  font-weight: bold;
-  font-size: 1em;
+    font-weight: bold;
+    font-size: 1em;
 }
 
 .header-left .subtitle {
-  font-weight: normal;
-  margin-top: 5px;
-  font-size: 1em;
+    font-weight: normal;
+    margin-top: 5px;
+    font-size: 1em;
 }
 
 .header-left img {
-  height: 64px;
+    height: 64px;
 }
 
 main {
-  flex: 1;
-  padding: 20px;
-  overflow-y: auto;
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
 }
 
 #form-container {
-  max-width: 600px;
-  margin: 0 auto;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .form-group {
-  margin-bottom: 15px;
-  display: flex;
-  align-items: center;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
 }
 
 .form-group label {
-  flex: 0 0 200px;
-  margin-right: 10px;
-  font-weight: normal;
-  white-space: nowrap;
+    flex: 0 0 200px;
+    margin-right: 10px;
+    font-weight: normal;
+    white-space: nowrap;
 }
 
 .form-group input[type="text"],
 .form-group select,
 .form-group textarea {
-  flex: 1;
-  padding: 2px 12px; /* 패딩 조정 */
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+    flex: 1;
+    padding: 2px 12px; /* 패딩 조정 */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
 .form-group textarea {
-  resize: none;
+    resize: none;
 }
 
 .form-group input[type="checkbox"],
 textarea {
-  margin-left: 5px;
-  margin-right: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .path-header {
-  justify-content: space-between;
+    justify-content: space-between;
 }
 
 #path-list {
-  display: flex;
-  flex-direction: column;
-  margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
 }
 
 #path-list .path-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 5px;
-  gap: 10px;
-  flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 #path-list .path-item select,
 #path-list .path-item input[type="text"] {
-  flex-grow: 1;
+    flex-grow: 1;
 }
 
 footer {
-  background-color: #f0f0f0;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
+    background-color: #f0f0f0;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
 }
 
 .button-group {
-  max-width: 600px;
-  width: 100%;
-  display: flex;
-  justify-content: flex-end; /* 버튼을 오른쪽으로 정렬 */
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; /* 버튼을 오른쪽으로 정렬 */
 }
 
 /* 공통 버튼 스타일 */
 button {
-  padding: 5px 15px;
-  margin-left: 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+    padding: 5px 15px;
+    margin-left: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 button:hover {
-  background-color: #0056b3;
+    background-color: #0056b3;
 }
 
 button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
+    background-color: #ccc;
+    cursor: not-allowed;
 }
 
 /* 다크 모드 스타일 */
 @media (prefers-color-scheme: dark) {
-  body {
-    background-color: #444;
-    color: #fff;
-  }
+    body {
+        background-color: #444;
+        color: #fff;
+    }
 
-  header {
-    background-color: #444;
-  }
+    header {
+        background-color: #444;
+    }
 
-  footer {
-    background-color: #333;
-  }
+    footer {
+        background-color: #333;
+    }
 
-  .form-group input[type="text"],
-  .form-group select,
-  .form-group textarea {
-    background-color: #555;
-    color: #fff;
-    border: 1px solid #777;
-  }
+    .form-group input[type="text"],
+    .form-group select,
+    .form-group textarea {
+        background-color: #555;
+        color: #fff;
+        border: 1px solid #777;
+    }
 
-  button {
-    background-color: #555;
-  }
+    button {
+        background-color: #555;
+    }
 
-  button:hover {
-    background-color: #777;
-  }
+    button:hover {
+        background-color: #777;
+    }
 }
 
 #reset-exclude-regex {
-  background: none;
-  text-decoration: underline;
-  font-size: 0.75em;
-  padding: 0;
+    background: none;
+    text-decoration: underline;
+    font-size: 0.75em;
+    padding: 0;
 }
