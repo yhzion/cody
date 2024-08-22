@@ -30,7 +30,7 @@ sudo chown -R 501:20 ~/.npm 2>/dev/null; command -v npm >/dev/null 2>&1 && { tim
 ## 직접 빌드
 
 ```bash
-git clone https://github.com/yourusername/cody.git
+git clone https://github.com/yhzion/cody.git
 cd cody
 npm install
 ```
