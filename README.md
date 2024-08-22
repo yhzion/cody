@@ -35,8 +35,6 @@ cd cody
 npm install
 ```
 
-````
-
 ### 실행
 
 ```bash
