@@ -18,22 +18,6 @@
     "electron-packager": "^17.1.2"
   },
   "author": "Youngho.jeon",
-  "build": {
-    "appId": "com.github.yhzion.cody",
-    "dmg": {
-      "title": "Cody"
-    },
-    "mac": {
-      "target": [
-        {
-          "target": "dmg",
-          "arch": [
-            "arm64"
-          ]
-        }
-      ],
-      "icon": "assets/fox.icns"
-    }
-  },
+  "buildConfig": "electron-builder.yml",
   "license": "MIT"
 }

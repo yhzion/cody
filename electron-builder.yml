@@ -1,0 +1,9 @@
+appId: com.github.yhzion.cody
+dmg:
+  title: Cody
+mac:
+  target:
+    - target: dmg
+      arch:
+        - arm64
+  icon: assets/fox.icns
