@@ -6,7 +6,7 @@ export async function handleCopyChatGPT() {
   const result = await window.electronAPI.runCommandAndCopy(formData);
   handleNotification(
     result,
-    "결과가 클립보드에 복사되었으며, ChatGPT가 열립니다.",
+    "The result has been copied to the clipboard and ChatGPT is opening.",
   );
   if (result.success) {
     window.electronAPI.openChatGPT();

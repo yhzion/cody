@@ -16,7 +16,7 @@ function setupIpcHandlers(mainWindow, app) {
         return JSON.parse(data);
       }
     } catch (error) {
-      console.error("데이터 로드 오류:", error);
+      console.error("Error loading data:", error);
     }
     return null;
   });
@@ -26,7 +26,7 @@ function setupIpcHandlers(mainWindow, app) {
       const dataPath = path.join(app.getPath("userData"), "form-data.json");
       fs.writeFileSync(dataPath, JSON.stringify(data));
     } catch (error) {
-      console.error("데이터 저장 오류:", error);
+      console.error("Error saving data:", error);
     }
   });
 
@@ -37,7 +37,7 @@ function setupIpcHandlers(mainWindow, app) {
       });
       return result;
     } catch (error) {
-      console.error("디렉토리 열기 오류:", error);
+      console.error("Error opening directory:", error);
     }
   });
 
@@ -47,7 +47,7 @@ function setupIpcHandlers(mainWindow, app) {
       const result = await dialog.showOpenDialog(mainWindow, { properties });
       return result;
     } catch (error) {
-      console.error("파일 또는 디렉토리 열기 오류:", error);
+      console.error("Error opening file or directory:", error);
     }
   });
 
@@ -57,7 +57,7 @@ function setupIpcHandlers(mainWindow, app) {
         mainWindow.setAlwaysOnTop(isAlwaysOnTop);
       }
     } catch (error) {
-      console.error("최상단 설정 오류:", error);
+      console.error("Error setting always on top:", error);
     }
   });
 
@@ -180,7 +180,7 @@ function setupIpcHandlers(mainWindow, app) {
 
       return { success: true };
     } catch (error) {
-      console.error("명령어 실행 오류:", error);
+      console.error("Error executing command:", error);
       return { success: false, error: error.message };
     }
   });

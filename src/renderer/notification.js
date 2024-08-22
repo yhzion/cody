@@ -3,18 +3,18 @@ export async function handleNotification(result, successMessage) {
     if (Notification.permission === "default") {
       const permission = await Notification.requestPermission();
       if (permission === "granted") {
-        new Notification("작업 완료", { body: successMessage });
+        new Notification("Task Completed", { body: successMessage });
       } else {
-        console.error("Notification 권한이 거부되었습니다.");
+        console.error("Notification permission was denied.");
       }
     } else if (Notification.permission === "granted") {
-      new Notification("작업 완료", { body: successMessage });
+      new Notification("Task Completed", { body: successMessage });
     } else {
-      console.error("Notification 권한이 없습니다.");
+      console.error("No notification permission.");
     }
   } else {
-    new Notification("작업 실패", {
-      body: "명령어 실행 중 오류가 발생했습니다.",
+    new Notification("Task Failed", {
+      body: "An error occurred while executing the command.",
     });
   }
 }

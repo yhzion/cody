@@ -3,7 +3,7 @@ let colors;
 
 const loadColors = async () => {
   if (!chalk) {
-    chalk = (await import('chalk')).default;
+    chalk = (await import("chalk")).default;
     colors = {
       reset: chalk.reset,
       bright: chalk.bold,
@@ -32,8 +32,8 @@ const loadColors = async () => {
         cyan: chalk.bgCyan,
         white: chalk.bgWhite,
       },
-      directory: chalk.cyan.bold, // 디렉토리 스타일 추가
-      file: chalk.white, // 파일 스타일 추가
+      directory: chalk.cyan.bold,
+      file: chalk.white,
     };
   }
   return colors;

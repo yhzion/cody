@@ -7,7 +7,7 @@ async function isBinaryFile(filePath) {
     return text.includes("\u0000");
   } catch (error) {
     console.error(
-      `파일을 검사하는 중 오류 발생: ${filePath}, ${error.message}`,
+      `Error occurred while checking the file: ${filePath}, ${error.message}`,
     );
     return false;
   }
