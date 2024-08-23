@@ -1,7 +1,6 @@
 const path = require("path");
 
 module.exports = {
-  mode: process.env.NODE_ENV || "development", // mode 설정 추가
   entry: "./src/renderer/index.mjs",
   output: {
     filename: "renderer.bundle.js",
@@ -19,9 +18,16 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.wasm$/,
+        type: "webassembly/async",
+      },
     ],
   },
   resolve: {
     extensions: [".mjs", ".js"],
+  },
+  experiments: {
+    asyncWebAssembly: true,
   },
 };
