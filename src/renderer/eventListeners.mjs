@@ -4,7 +4,7 @@ import {
   handleOutputDirSelection,
   handleAddPath,
   resetExcludeRegex,
-  handleCopy,
+  handleGeneratePrompt,
   handleAlwaysOnTopChange,
 } from "./handlers/index.mjs";
 import { resetUserPrompt } from "./handlers/resetUserPrompt.mjs";
@@ -34,7 +34,9 @@ export function initializeEventListeners() {
   document
     .getElementById("exit-btn")
     .addEventListener("click", () => window.electronAPI.quitApp());
-  document.getElementById("copy-btn").addEventListener("click", handleCopy);
+  document
+    .getElementById("generate-prompt-btn")
+    .addEventListener("click", handleGeneratePrompt);
   document
     .getElementById("always-on-top")
     .addEventListener("change", handleAlwaysOnTopChange);
