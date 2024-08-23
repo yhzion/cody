@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
-const matchesPattern = require("./matchesPattern");
-const isBinaryFile = require("./isBinaryFile");
+const matchesPattern = require("./matchesPattern.cjs");
+const isBinaryFile = require("./isBinaryFile.cjs");
 
 async function generateTreeAndCollectPaths(
   dir,

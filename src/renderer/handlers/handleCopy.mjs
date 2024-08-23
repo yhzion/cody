@@ -1,5 +1,5 @@
-import { collectFormData } from "../form.js";
-import { handleNotification } from "../notification.js";
+import { collectFormData } from "../form.mjs";
+import { handleNotification } from "../notification.mjs";
 
 export async function handleCopy() {
   const formData = collectFormData();

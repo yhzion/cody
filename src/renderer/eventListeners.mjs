@@ -7,7 +7,7 @@ import {
   handleCopy,
   handleCopyChatGPT,
   handleAlwaysOnTopChange,
-} from "./handlers/index.js";
+} from "./handlers/index.mjs";
 
 export function initializeEventListeners() {
   console.log("Initializing event listeners");

@@ -1,4 +1,4 @@
-import { addPathItem } from "./pathManager.js";
+import { addPathItem } from "./pathManager.mjs";
 
 export function populateFormData(data) {
   document.getElementById("base-directory").value = data.baseDir;

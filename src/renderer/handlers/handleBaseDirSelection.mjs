@@ -1,4 +1,4 @@
-import { saveFormData } from "../data.js";
+import { saveFormData } from "../data.mjs";
 
 export async function handleBaseDirSelection() {
   const result = await window.electronAPI.openDirectory();

@@ -1,7 +1,7 @@
 const fs = require("fs");
 const clipboard = require("electron").clipboard;
-const generateTreeAndCollectPaths = require("./generateTreeAndCollectPaths");
-const isBinaryFile = require("./isBinaryFile");
+const generateTreeAndCollectPaths = require("./generateTreeAndCollectPaths.cjs");
+const isBinaryFile = require("./isBinaryFile.cjs");
 
 async function generateTree(dir, options) {
   const { entries, output: treeOutput } = await generateTreeAndCollectPaths(

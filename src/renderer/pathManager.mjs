@@ -1,4 +1,4 @@
-import { saveFormData } from "./data.js";
+import { saveFormData } from "./data.mjs";
 
 let pathCount = 0;
 

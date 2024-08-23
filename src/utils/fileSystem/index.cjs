@@ -1,7 +1,7 @@
-const generateTree = require("./generateTree");
-const matchesPattern = require("./matchesPattern");
-const isBinaryFile = require("./isBinaryFile");
-const generateTreeAndCollectPaths = require("./generateTreeAndCollectPaths");
+const generateTree = require("./generateTree.cjs");
+const matchesPattern = require("./matchesPattern.cjs");
+const isBinaryFile = require("./isBinaryFile.cjs");
+const generateTreeAndCollectPaths = require("./generateTreeAndCollectPaths.cjs");
 
 module.exports = {
   generateTree,

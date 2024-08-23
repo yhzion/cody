@@ -10,7 +10,7 @@ function createWindow() {
     resizable: true,
     icon: path.join(__dirname, "../../assets/fox.icns"),
     webPreferences: {
-      preload: path.join(__dirname, "../preload.js"),
+      preload: path.join(__dirname, "../preload.cjs"),
       contextIsolation: true,
       nodeIntegration: false,
       enableRemoteModule: false,
@@ -18,7 +18,10 @@ function createWindow() {
   });
 
   mainWindow.loadFile(path.join(__dirname, "../../public/index.html"));
-  // mainWindow.webContents.openDevTools({ mode: "detach" });
+  // 빌드 환경에서는 개발자 도구를 열지 않습니다.
+  if (process.env.NODE_ENV !== "production") {
+    mainWindow.webContents.openDevTools({ mode: "detach" });
+  }
   return mainWindow;
 }
 
