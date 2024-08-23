@@ -42,11 +42,20 @@
                     <button id="add-path">+ 추가</button>
                 </div>
 
-                <div id="path-list">
-                    <!-- 경로 항목들이 여기 추가될 것임 -->
-                </div>
+                <div id="path-list"></div>
 
-                <!-- 정규식 필터 입력 및 재설정 버튼 -->
+                <div class="form-group">
+                    <label for="user-prompt"
+                        >사용자 프롬프트<button id="reset-user-prompt">
+                            기본설정사용
+                        </button>
+                    </label>
+                    <textarea
+                        id="user-prompt"
+                        rows="5"
+                        placeholder="Enter your custom prompt here"
+                    ></textarea>
+                </div>
                 <div class="form-group">
                     <label for="include-regex">포함할 경로 정규식 필터</label>
                     <textarea
@@ -69,8 +78,10 @@
                         placeholder="Exclude pattern"
                     ></textarea>
                 </div>
-
-                <!-- 파일 내용 및 텍스트 파일 추출 옵션 -->
+                <div class="form-group">
+                    <label for="max-tokens">최대 입력 토큰 수 (k)</label>
+                    <input type="number" id="max-tokens" value="128" min="1" />
+                </div>
                 <div class="form-group">
                     <label for="show-content">파일 내용 포함</label>
                     <input type="checkbox" id="show-content" checked />
@@ -87,8 +98,6 @@
                     />
                     <button id="select-output-dir" disabled>탐색</button>
                 </div>
-
-                <!-- 윈도우 최상단 유지 옵션 -->
                 <div class="form-group">
                     <label for="always-on-top">윈도우 최상단 유지</label>
                     <input type="checkbox" id="always-on-top" />

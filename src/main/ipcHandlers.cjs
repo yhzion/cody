@@ -85,6 +85,7 @@ function setupIpcHandlers(mainWindow, app) {
         outputToFile,
         outputFilePath,
         paths,
+        userPrompt,
       } = formData;
 
       const defaultExcludePattern = [
@@ -170,7 +171,7 @@ function setupIpcHandlers(mainWindow, app) {
 
       const targetDirs =
         paths.length > 0 ? paths.map((p) => p.value) : [baseDir];
-      let output = "";
+      let output = userPrompt ? `${userPrompt}\n\n` : "";
 
       for (const dir of targetDirs) {
         output += await generateTree(dir, options);

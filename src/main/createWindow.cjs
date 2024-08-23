@@ -4,7 +4,7 @@ const path = require("path");
 function createWindow() {
   const mainWindow = new BrowserWindow({
     width: 650,
-    height: 650,
+    height: 800,
     minWidth: 650,
     maxWidth: 650,
     resizable: true,
@@ -18,7 +18,7 @@ function createWindow() {
   });
 
   mainWindow.loadFile(path.join(__dirname, "../../public/index.html"));
-  // 빌드 환경에서는 개발자 도구를 열지 않습니다.
+
   if (process.env.NODE_ENV !== "production") {
     mainWindow.webContents.openDevTools({ mode: "detach" });
   }

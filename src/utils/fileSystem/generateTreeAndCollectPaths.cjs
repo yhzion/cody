@@ -15,7 +15,6 @@ async function generateTreeAndCollectPaths(
 
   const items = await fs.promises.readdir(dir, { withFileTypes: true });
 
-  // .asar 파일이나 node_modules 디렉토리를 건너뛰기
   const filteredItems = items.filter(
     (item) =>
       !item.name.endsWith(".asar") && !item.name.includes("node_modules"),
