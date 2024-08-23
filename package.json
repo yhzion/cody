@@ -4,10 +4,10 @@
   "version": "1.0.0",
   "main": "src/main.cjs",
   "scripts": {
-    "start": "electron .",
-    "webpack": "webpack",
-    "build": "webpack && electron-builder",
-    "build:production": "NODE_ENV=production webpack && electron-builder"
+    "start": "NODE_ENV=production webpack && electron .",
+    "build": "NODE_ENV=production webpack && electron-builder",
+    "webpack": "webpack"
+
   },
   "dependencies": {
     "chalk": "^5.0.0",
