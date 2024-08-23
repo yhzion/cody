@@ -10,6 +10,10 @@ async function generateTreeAndCollectPaths(
   parentPaths = [],
   isLast = true,
 ) {
+  if (!dir) {
+    throw new Error("Directory path is empty or invalid.");
+  }
+
   const entries = [];
   let output = "";
 
@@ -46,6 +50,22 @@ async function generateTreeAndCollectPaths(
       fullDisplayPath,
       parentPaths: [...parentPaths, displayName],
     };
+
+    // 파일 내용이 비어 있는 경우 건너뛰기
+    if (!isDirectory) {
+      try {
+        const content = await fs.promises.readFile(fullPath, "utf8");
+        if (!content.trim()) {
+          continue;
+        }
+      } catch (error) {
+        console.error(
+          `Error occurred while reading the file: ${fullPath}, ${error.message}`,
+        );
+        continue;
+      }
+    }
+
     entries.push(currentEntry);
     output += `${fullDisplayPath}\n`;
 

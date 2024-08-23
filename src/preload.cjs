@@ -4,7 +4,6 @@ const { shell } = require("electron");
 contextBridge.exposeInMainWorld("electronAPI", {
   saveData: (data) => ipcRenderer.invoke("save-data", data),
   loadData: () => ipcRenderer.invoke("load-data"),
-  openChatGPT: () => ipcRenderer.invoke("open-chatgpt"),
   openDirectory: () => ipcRenderer.invoke("dialog:openDirectory"),
   openFileOrDirectory: (type) =>
     ipcRenderer.invoke("dialog:openFileOrDirectory", type),

@@ -5,7 +5,6 @@ import {
   handleAddPath,
   resetExcludeRegex,
   handleCopy,
-  handleCopyChatGPT,
   handleAlwaysOnTopChange,
 } from "./handlers/index.mjs";
 import { resetUserPrompt } from "./handlers/resetUserPrompt.mjs";
@@ -36,9 +35,6 @@ export function initializeEventListeners() {
     .getElementById("exit-btn")
     .addEventListener("click", () => window.electronAPI.quitApp());
   document.getElementById("copy-btn").addEventListener("click", handleCopy);
-  document
-    .getElementById("copy-chatgpt-btn")
-    .addEventListener("click", handleCopyChatGPT);
   document
     .getElementById("always-on-top")
     .addEventListener("change", handleAlwaysOnTopChange);

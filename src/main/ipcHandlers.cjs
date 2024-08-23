@@ -71,10 +71,6 @@ function setupIpcHandlers(mainWindow, app) {
     }
   });
 
-  ipcMain.handle("open-chatgpt", () => {
-    shell.openExternal("https://chat.openai.com");
-  });
-
   ipcMain.handle("run-command-and-copy", async (event, formData) => {
     try {
       const {
@@ -169,12 +165,35 @@ function setupIpcHandlers(mainWindow, app) {
         saveClipboard: true,
       };
 
-      const targetDirs =
-        paths.length > 0 ? paths.map((p) => p.value) : [baseDir];
+      let targetDirs = paths.length > 0 ? paths.map((p) => p.value) : [];
+      if (targetDirs.length === 0 && baseDir) {
+        targetDirs = [baseDir];
+      }
+
       let output = userPrompt ? `${userPrompt}\n\n` : "";
 
+      if (
+        (targetDirs.length === 0) | targetDirs.every((d) => !Boolean(d)) &&
+        baseDir
+      ) {
+        targetDirs = [baseDir];
+      }
+
+      if (!baseDir) {
+        return { success: false, error: "No base directory provided." };
+      }
+
       for (const dir of targetDirs) {
+        if (!dir) {
+          console.warn("Skipping empty directory path.");
+          continue;
+        }
         output += await generateTree(dir, options);
+      }
+
+      if (output.trim() === "") {
+        console.warn("No valid directories to process.");
+        return { success: false, error: "No valid directories to process." };
       }
 
       clipboard.writeText(output);
