@@ -19,9 +19,8 @@ function createWindow() {
 
   mainWindow.loadFile(path.join(__dirname, "../../public/index.html"));
 
-  if (process.env.NODE_ENV !== "production") {
-    // mainWindow.webContents.openDevTools({ mode: "detach" });
-  }
+  // mainWindow.webContents.openDevTools({ mode: "detach" });
+
   return mainWindow;
 }
 
